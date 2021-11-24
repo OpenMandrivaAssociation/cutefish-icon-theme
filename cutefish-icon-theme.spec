@@ -1,23 +1,24 @@
+%define oname icons
 %define  _name  Crule
 Name:           cutefish-icon-theme
-Version:        @SERVICE@
-Release:        0
+Version:        0.5
+Release:        1
 Summary:        Cutefish Desktop Icon Theme
 License:        GPL-3.0-or-later
 Group:          System/GUI/KDE
 URL:            https://github.com/cutefishos/icons
-Source:         %{name}-%{version}.tar.xz
+Source:         https://github.com/cutefishos/icons/archive/refs/tags/%{version}/%{oname}-%{version}.tar.gz
 BuildRequires:  fdupes
 BuildRequires:  hicolor-icon-theme
-Requires:       gtk3-tools
-Conflicts:      cyber-icon-theme
+Requires:       gtk-update-icon-cache
+
 BuildArch:      noarch
 
 %description
 Dark and light icons for Cutefish Desktop
 
 %prep
-%autosetup
+%autosetup -n %{oname}-%{version} -p1
 rm -fv %{_name}*/icon-theme.cache
 
 %build
@@ -35,7 +36,7 @@ find -L %{buildroot}%{_datadir}/icons -type l -delete -print
 %icon_theme_cache_create_ghost %{_name}-dark
 
 %files
+%license LICENSE
 %doc README.md
 %{_datadir}/icons/%{_name}*/
 %ghost %{_datadir}/icons/%{_name}*/icon-theme.cache
-%license LICENSE
