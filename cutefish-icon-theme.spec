@@ -32,8 +32,8 @@ find -L %{buildroot}%{_datadir}/icons -type l -delete -print
 
 %fdupes -s %{buildroot}%{_datadir}/icons/
 
-%icon_theme_cache_create_ghost %{_name}
-%icon_theme_cache_create_ghost %{_name}-dark
+#icon_theme_cache_create_ghost %{_name}
+#icon_theme_cache_create_ghost %{_name}-dark
 
 %files
 %license LICENSE
