@@ -2,7 +2,7 @@
 %define  _name  Crule
 Name:           cutefish-icon-theme
 Version:        0.8
-Release:        1
+Release:        2
 Summary:        Cutefish Desktop Icon Theme
 License:        GPL-3.0-or-later
 Group:          System/GUI/KDE
